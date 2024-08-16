@@ -24,7 +24,7 @@
     </main>
 
     <footer>
-        &copy; Your Learning Platform
+        &copy; Your Learning Platform <?php echo date('Y'); ?>
     </footer>
 </body>
 </html>
