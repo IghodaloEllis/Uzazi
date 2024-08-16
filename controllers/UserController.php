@@ -8,6 +8,19 @@ class UserController {
     public function __construct() {
         $this->db = new Database();
     }
+    public function index() {
+        if (isAdmin()) {
+            // Fetch all users for admin
+            $users = $this->getAllUsers();
+        } else {
+            // Fetch only the logged-in user's data
+            $userId = $_SESSION['user_id'];
+            $user = $this->getUserById($userId);
+            $users = [$user]; // Convert to array for consistent handling
+        }
+
+        // Render the view with the appropriate user data
+    }
 
     public function register($firstName, $lastName, $email, $password) {
         $user = new User($this->db);
