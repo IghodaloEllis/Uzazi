@@ -1,5 +1,5 @@
 # Uzazi
-![![uzazilgo](https://github.com/user-attachments/assets/cc03af7b-de2d-4985-8552-265ee3538141)
+(https://github.com/user-attachments/assets/cc03af7b-de2d-4985-8552-265ee3538141)
 
 # The Manual
 
