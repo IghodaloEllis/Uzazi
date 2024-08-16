@@ -114,10 +114,7 @@ The optimal programming language for developing an AI-powered personalized learn
     • Prioritize User Testing: Gather feedback to refine the platform.
 
 
-<div id="badges">
-  <a href="https://www.linkedin.com/in/ighodaloellis">
-    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
-  </a>
+<div>
   <a href="https://www.instagram.com/mrwellslife">
     <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white"/>
   </a>
