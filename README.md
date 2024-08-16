@@ -1,5 +1,6 @@
 # Uzazi
-![plot](./images/uzazilgo.jpg)
+![uzazilgo](https://github.com/user-attachments/assets/8dfa8b59-f42a-40e6-b33b-ca76e6eaebf1)
+
 
 # The Manual
 
