@@ -1,5 +1,5 @@
 # Uzazi
-![Alt text]((./blob/main/images/uzazilgo.jpg)?raw=true "Title")
+![Alt text]((./images/uzazilgo.jpg)?raw=true "Title")
 
 # The Manual
 
