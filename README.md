@@ -122,6 +122,7 @@ The optimal programming language for developing an AI-powered personalized learn
   <a href="https://web.facebook.com/MrWellslife">Facebook</a><br>
   <a href="https://www.tiktok.com/@mrwellslife">TIKTOK</a><br>
   <a href="https://www.threads.net/@mrwellslife">THREADS</a>
+  <a href="https://www.producthunt.com/@mrwellslife">PRODUCT HUNT</a>
 </div>
 
 
