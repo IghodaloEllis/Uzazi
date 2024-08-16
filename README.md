@@ -2,7 +2,7 @@
 
 ![UZAZI LOGO]((https://github.com/IghodaloEllis/Uzazi/blob/main/images/uzazilgo.jpg)?raw=true "Title")
 
-# The Manual
+# THE INTRODUCTION
 We're currently working with AI on this project, but we're also welcoming contributions from others. 
 We may not end up using every library and framework listed, but we're keeping our options open for input from contributors.
 Don't worry if no juju we'll NOT sleep on this one cause we Love it.
