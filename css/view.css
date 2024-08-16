@@ -1,0 +1,11 @@
+/* courses.css */
+#course-list {
+  list-style: none;
+  padding: 0;
+}
+
+.course-item {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+}
