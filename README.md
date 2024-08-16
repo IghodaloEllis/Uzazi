@@ -51,7 +51,7 @@ The optimal programming language for developing an AI-powered personalized learn
     • Community and Ecosystem: A strong community and ecosystem can provide support and resources.
     • Developer Expertise: Consider the skills of your development team.
 
-# Programming Languages: ***Hybrid Approach***
+# Programming Languages: ### ***Hybrid Approach***
 ### Additional Factors:
 
     • Cloud Platforms: (AMAZON AWS).
