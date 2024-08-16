@@ -1,0 +1,11 @@
+.header {
+    /* styles for the header */
+}
+
+.main {
+    /* styles for the main content */
+}
+
+.login-form {
+    /* styles for the login form */
+}
