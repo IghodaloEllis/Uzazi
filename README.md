@@ -11,11 +11,11 @@ Traditional education systems often struggle to cater to the diverse learning st
 Develop an AI-powered personalized learning platform that adapts to each student's unique needs, providing tailored content, assessments, and feedback.
 
 ### Key Features:
-    • ** Intelligent Assessment **: Accurately assesses students' strengths, weaknesses, and learning styles.
-    • ** Adaptive Content Delivery **: Delivers content and exercises aligned with the student's learning pace and comprehension.
-    • ** Real-time Feedback **: Provides immediate feedback on student performance and suggests areas for improvement.
-    • ** Gamification **: Incorporates interactive elements and rewards to enhance engagement and motivation.
-    • **Data Analytics**: Tracks student progress and generates insights for educators and parents.
+    • Intelligent Assessment: Accurately assesses students' strengths, weaknesses, and learning styles.
+    • Adaptive Content Delivery: Delivers content and exercises aligned with the student's learning pace and comprehension.
+    • Real-time Feedback: Provides immediate feedback on student performance and suggests areas for improvement.
+    • Gamification: Incorporates interactive elements and rewards to enhance engagement and motivation.
+    • Data Analytics: Tracks student progress and generates insights for educators and parents.
     
 ### Potential Revenue Streams:
     • Subscription fees for students and parents
