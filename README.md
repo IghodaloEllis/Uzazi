@@ -10,7 +10,7 @@ Don't worry if no **JUJU** we'll NOT sleep on this one cause we Love💟 it. Wor
 
 
 ## AI-Powered Personalized Learning Platform
-### Problem
+## Problem
 Traditional education systems often struggle to cater to the diverse learning styles and paces of individual students.
 
 ### Solution
