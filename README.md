@@ -5,7 +5,7 @@
 # THE INTRODUCTION
 We're currently working with AI on this project, but we're also welcoming contributions from others. 
 We may not end up using every library and framework listed, but we're keeping our options open for input from contributors.
-Don't worry if no **JUJU** we'll NOT sleep on this one cause we Love💟 it.
+Don't worry if no **JUJU** we'll NOT sleep on this one cause we Love💟 it. Working with AI is not as easy as you think because you have to know what to tell AI to do.
 
 ## AI-Powered Personalized Learning Platform
 ### Problem
@@ -67,25 +67,25 @@ The optimal programming language for developing an AI-powered personalized learn
     • User authentication and authorization
     • Profile management
     • Learning history tracking
-    • Technology: Python, Django/Flask, SQL databases (PostgreSQL, MySQL)
+    • Technology: PHP, Django/Flask, SQL databases (PostgreSQL, MySQL)
     
     2.Content Management:
     • Curriculum design and management
     • Question bank
     • Multimedia content integration
-    • Technology: Python, Django/Flask, Content Management Systems (CMS), cloud storage (AWS S3, Google Cloud Storage)
+    • Technology: PHP, Django/Flask, Content Management Systems (CMS), cloud storage (AWS S3, Google Cloud Storage)
     
     3.AI Engine:
     • Student modeling (identifying strengths, weaknesses, learning styles)
     • Content recommendation (tailoring content to student needs)
     • Intelligent tutoring systems (providing real-time feedback)
-    • Technology: Python, machine learning libraries (TensorFlow, PyTorch, Scikit-learn), natural language processing (NLTK, spaCy)
+    • Technology: PHP, machine learning libraries (TensorFlow, PyTorch, Scikit-learn), natural language processing (NLTK, spaCy)
     
     4.Assessment and Feedback:
     • Automated grading (multiple-choice, short answer, essay)
     • Performance analytics
     • Adaptive testing
-    • Technology: Python, machine learning libraries, natural language processing
+    • Technology: PHP, machine learning libraries, natural language processing
     
     5.User Interface:
     • Intuitive and engaging design
