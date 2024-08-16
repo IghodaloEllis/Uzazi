@@ -7,17 +7,7 @@ We're currently working with AI on this project, but we're also welcoming contri
 We may not end up using every library and framework listed, but we're keeping our options open for input from contributors.
 Don't worry if no **JUJU** we'll NOT sleep on this one cause we Love💟 it. Working with AI is not as easy as you think because you have to know what to tell AI to do.
 
-<div id="badges">
-  <a href="https://www.linkedin.com/in/ighodaloellis">
-    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
-  </a>
-  <a href="https://www.instagram.com/mrwellslife">
-    <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white"/>
-  </a>
-  <a href="https://x.com/mrwellslife">
-    <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="X Badge"/>
-  </a>
-</div>
+
 
 ## AI-Powered Personalized Learning Platform
 ### Problem
@@ -124,8 +114,17 @@ The optimal programming language for developing an AI-powered personalized learn
     • Prioritize User Testing: Gather feedback to refine the platform.
 
 
-
-
+<div id="badges">
+  <a href="https://www.linkedin.com/in/ighodaloellis">
+    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+  </a>
+  <a href="https://www.instagram.com/mrwellslife">
+    <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white"/>
+  </a>
+  <a href="https://x.com/mrwellslife">
+    <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="X Badge"/>
+  </a>
+</div>
 
 
 
