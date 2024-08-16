@@ -7,7 +7,7 @@ We're currently working with AI on this project, but we're also welcoming contri
 We may not end up using every library and framework listed, but we're keeping our options open for input from contributors.
 Don't worry if no **JUJU** we'll NOT sleep on this one cause we Love💟 it. Working with AI is not as easy as you think because you have to know what to tell AI to do.
 
-
+***NOTE: NOT Testing Codes yet until we've made a very good start but CodeQL workflow run say All good so far.***
 
 ## AI-Powered Personalized Learning Platform
 ## Problem
