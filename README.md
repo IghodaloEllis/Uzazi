@@ -35,8 +35,8 @@ Develop an AI-powered personalized learning platform that adapts to each student
 To address the growing demand for personalized education and leveraging the power of AI, this idea has the potential to be highly lucrative and impactful.
 
 # Choice of Languages
-**Choosing the Right Programming Language for an AI-Powered Personalized Learning Platform
-The optimal programming language for developing an AI-powered personalized learning platform depends on several factors:
+###Choosing the Right Programming Language for an AI-Powered Personalized Learning Platform
+The optimal programming language for developing an AI-powered personalized learning platform depends on several factors###:
 
     • Scalability: The platform should handle a large number of users and data efficiently.**
     • Performance: Real-time analysis and feedback are crucial for a personalized learning experience.
