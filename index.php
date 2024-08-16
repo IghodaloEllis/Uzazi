@@ -7,6 +7,7 @@
 </head>
 <body>
     <header>
+        <?php  echo '<img src="images/logo.png" alt="Uzazi Learning Platform Logo">';   ?>
         <h1>Welcome to Uzazi Learning Platform</h1>
     </header>
 
