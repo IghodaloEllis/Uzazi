@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
+    <h1>User home</h1>
 
     <?php
     // Include necessary files
