@@ -90,7 +90,7 @@ The optimal programming language for developing an AI-powered personalized learn
     5.User Interface:
     • Intuitive and engaging design
     • Adaptive layout for different devices
-    • Technology: HTML, CSS, JavaScript, React/Angular/Vue, UI/UX design tools
+    • Technology: PHP, HTML, CSS, JavaScript, React/Angular/Vue, UI/UX design tools
     
     6.Infrastructure:
     • Scalable cloud platform (AWS, GCP, Azure)
