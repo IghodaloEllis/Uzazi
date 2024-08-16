@@ -1,6 +1,6 @@
 # Uzazi <sup>:tm:</sup>
 
-![UZAZI LOGO](https://raw.githubusercontent.com/IghodaloEllis/Uzazi/main/images/uzazilgo.jpg)=250x250
+![UZAZI LOGO](https://raw.githubusercontent.com/IghodaloEllis/Uzazi/main/images/uzazilgo.jpg width="100" height="100")
 
 # THE INTRODUCTION
 We're currently working with AI on this project, but we're also welcoming contributions from others. 
