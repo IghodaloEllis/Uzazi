@@ -1,5 +1,5 @@
 # Uzazi
-![alt text]([(https://github.com/IghodaloEllis/Uzazi/blob/main/images/uzazilgo.jpg)]
+![alt text](https://github.com/IghodaloEllis/Uzazi/blob/main/images/uzazilgo.jpg)
 
 # The Manual
 
