@@ -58,32 +58,32 @@ Key Libraries and Frameworks
 
 
 # Core Components and Technologies
-    1. User Management:
+    1.User Management:
     • User authentication and authorization
     • Profile management
     • Learning history tracking
     • Technology: Python, Django/Flask, SQL databases (PostgreSQL, MySQL)
     
-    2. Content Management:
+    2.Content Management:
     • Curriculum design and management
     • Question bank
     • Multimedia content integration
     • Technology: Python, Django/Flask, Content Management Systems (CMS), cloud storage (AWS S3, Google Cloud Storage)
-    3. AI Engine:
+    3.AI Engine:
     • Student modeling (identifying strengths, weaknesses, learning styles)
     • Content recommendation (tailoring content to student needs)
     • Intelligent tutoring systems (providing real-time feedback)
     • Technology: Python, machine learning libraries (TensorFlow, PyTorch, Scikit-learn), natural language processing (NLTK, spaCy)
-    4. Assessment and Feedback:
+    4.Assessment and Feedback:
     • Automated grading (multiple-choice, short answer, essay)
     • Performance analytics
     • Adaptive testing
     • Technology: Python, machine learning libraries, natural language processing
-    5. User Interface:
+    5.User Interface:
     • Intuitive and engaging design
     • Adaptive layout for different devices
     • Technology: HTML, CSS, JavaScript, React/Angular/Vue, UI/UX design tools
-    6. Infrastructure:
+    6.Infrastructure:
     • Scalable cloud platform (AWS, GCP, Azure)
     • Database management
     • Deployment and monitoring
