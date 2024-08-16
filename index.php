@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Learning Platform</title>
+    <title>Welcome - Uzazi Learning Platform</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
