@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'classes/User.php';
 require_once 'classes/Database.php';
 
@@ -21,6 +22,14 @@ class UserController {
 
         // Render the view with the appropriate user data
     }
+    
+function isLoggedIn() {
+    return isset($_SESSION['user_id']);
+}
+
+function isAdmin() {
+    return isset($_SESSION['user_id']) && $_SESSION['user_role'] === 'admin';
+}
 
     public function register($firstName, $lastName, $email, $password) {
         $user = new User($this->db);
