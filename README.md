@@ -3,7 +3,10 @@
 ![UZAZI LOGO]((https://github.com/IghodaloEllis/Uzazi/blob/main/images/uzazilgo.jpg)?raw=true "Title")
 
 # The Manual
- Will be building this with the help of AI but contributors are welcome. Not all libraries and frameworks listed will be used but leaving it open for contributors.
+We're currently working with AI on this project, but we're also welcoming contributions from others. 
+We may not end up using every library and framework listed, but we're keeping our options open for input from contributors.
+Don't worry if no juju we'll NOT sleep on this one cause we Love it.
+
 ## AI-Powered Personalized Learning Platform
 ### Problem
 Traditional education systems often struggle to cater to the diverse learning styles and paces of individual students.
