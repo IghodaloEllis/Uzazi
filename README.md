@@ -1,4 +1,4 @@
-# Uzazi:tm:
+# Uzazi :tm:
 
 ![UZAZI LOGO]((https://github.com/IghodaloEllis/Uzazi/blob/main/images/uzazilgo.jpg)?raw=true "Title")
 
