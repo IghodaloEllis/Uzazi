@@ -1,36 +1,41 @@
-// USER CLASS
+//USER CLASS
 class User {
     private $id;
     private $firstName;
     private $lastName;
     private $email;
     private $password;
+    private $db; // Database instance
 
-    // Constructor
-    public function __construct($id, $firstName, $lastName, $email, $password) {
-        $this->id = $id;
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-        $this->email = $email;
-        $this->password = $password;
+    public function __construct($db) {
+        $this->db = $db;
     }
 
-    // Getters
-    public function getId() {
-        return $this->id;
+    // Methods for CRUD operations, getters, setters, and other user-related logic
+    // ...
+
+    public function createUser($firstName, $lastName, $email, $password) {
+        // Prepare SQL statement
+        $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)";
+        $stmt = $this->db->prepare($sql);
+
+        // Hash the password for security
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        // Bind parameters
+        $stmt->bindParam(1, $firstName);
+        $stmt->bindParam(2, $lastName);
+        $stmt->bindParam(3, $email);
+        $stmt->bindParam(4, $hashedPassword);
+
+        // Execute the statement
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            // Handle error
+            return false;
+        }
     }
 
-    public function getFirstName() {
-        return $this->firstName;
-    }
-
-    public function getLastName() {
-        return $this->lastName;
-    }
-
-    public function getEmail() {
-        return $this->email;
-    }
-
-    // Other methods as needed (e.g., update profile, change password)
+    // Other methods like getUserById, updateUser, deleteUser, etc.
 }
