@@ -1,3 +1,29 @@
+<?php
+class Image {
+    private $path;
+    private $altText;
+    private $width;
+    private $height;
+
+    public function __construct($path, $altText, $width = null, $height = null) {
+        $this->path = $path;
+        $this->altText = $altText;
+        $this->width = $width;
+        $this->height = $height;
+    }
+
+    public function getHtml() {
+        $attributes = [];
+        if ($this->width) {
+            $attributes[] = 'width="' . $this->width . '"';
+        }
+        if ($this->height) {
+            $attributes[] = 'height="' . $this->height . '"';
+        }
+        $attributesString = implode(' ', $attributes);
+        return '<img src="' . $this->path . '" alt="' . $this->altText . '" ' . $attributesString . '>';
+    }
+}
 
 <!DOCTYPE html>
 <html>
@@ -7,8 +33,9 @@
 </head>
 <body>
     <header>
-        <?php  echo '<img src="images/logo.png" alt="Uzazi Learning Platform Logo">';   ?>
-        <h1>Welcome to Uzazi Learning Platform</h1>
+$logo = new Image('images/logo.png', 'Uzazi Learning Platform Logo', 100, 100);
+echo $logo->getHtml();       
+<h1>Welcome to Uzazi Learning Platform</h1>
     </header>
 
     <main>
@@ -29,3 +56,4 @@
     </footer>
 </body>
 </html>
+?>
