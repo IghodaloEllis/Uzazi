@@ -46,12 +46,12 @@ The optimal programming language for developing an AI-powered personalized learn
     • Developer Expertise: Consider the skills of your development team.
 
 # Programming Languages: ***Hybrid Approach***
-**Additional Factors:
+### Additional Factors:
 
     • Cloud Platforms: (AMAZON AWS).
     • AI Frameworks: Select a language that aligns with your preferred AI frameworks (TensorFlow, PyTorch, Keras, etc.).
     • Database Top contenders: (MySQL, PostgreSQL).
-**Key Libraries and Frameworks:
+### Key Libraries and Frameworks:
 
     • Data processing: Pandas, NumPy
     • Machine learning: Scikit-learn, TensorFlow, PyTorch
