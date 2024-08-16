@@ -1,3 +1,4 @@
+// USER CLASS
 class User {
     private $id;
     private $firstName;
