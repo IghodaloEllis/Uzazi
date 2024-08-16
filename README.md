@@ -115,8 +115,8 @@ The optimal programming language for developing an AI-powered personalized learn
 
 
 <div>
-  <a href="https://www.instagram.com/mrwellslife">   
-  </a>
+  <a href="https://www.instagram.com/mrwellslife"> INSTAGRAM </a>
+
   <a href="https://x.com/mrwellslife">
     <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="X Badge"/>
   </a>
