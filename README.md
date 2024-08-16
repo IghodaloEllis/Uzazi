@@ -1,6 +1,6 @@
 # Uzazi <sup>:tm:</sup>
 
-![UZAZI LOGO](( https://raw.githubusercontent.com/IghodaloEllis/Uzazi/blob/main/images/uzazilgo.jpg)?raw=true
+![UZAZI LOGO](https://raw.githubusercontent.com/IghodaloEllis/Uzazi/blob/main/images/uzazilgo.jpg)?raw=true
 
 # THE INTRODUCTION
 We're currently working with AI on this project, but we're also welcoming contributions from others. 
