@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Our Learning Platform</h1>
+        <h1>Welcome to Uzazi Learning Platform</h1>
     </header>
 
     <main>
