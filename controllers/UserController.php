@@ -1,6 +1,6 @@
 <?php
 require_once 'classes/User.php';
-require_once 'config/Database.php';
+require_once 'classes/Database.php';
 
 class UserController {
     private $db;
