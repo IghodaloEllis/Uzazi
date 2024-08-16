@@ -2,7 +2,7 @@
 ![UZAZI LOGO]((https://github.com/IghodaloEllis/Uzazi/blob/main/images/uzazilgo.jpg)?raw=true "Title")
 
 # The Manual
-
+ Will be building this with the help of AI but contributors are welcome. Not all libraries and frameworks listed will be used but leaving it open for contributors.
 ## AI-Powered Personalized Learning Platform
 ### Problem
 Traditional education systems often struggle to cater to the diverse learning styles and paces of individual students.
@@ -45,12 +45,14 @@ The optimal programming language for developing an AI-powered personalized learn
     • Community and Ecosystem: A strong community and ecosystem can provide support and resources.
     • Developer Expertise: Consider the skills of your development team.
 
-# Programming Languages: ***Hybrid Approach***:
-Additional Factors:
+# Programming Languages: ***Hybrid Approach***
+**Additional Factors:
+
     • Cloud Platforms: (AMAZON AWS).
     • AI Frameworks: Select a language that aligns with your preferred AI frameworks (TensorFlow, PyTorch, Keras, etc.).
     • Database Top contenders: (MySQL, PostgreSQL).
-Key Libraries and Frameworks
+**Key Libraries and Frameworks:
+
     • Data processing: Pandas, NumPy
     • Machine learning: Scikit-learn, TensorFlow, PyTorch
     • Web development: PHP, Flask, React, Angular*
