@@ -1,5 +1,5 @@
 # Uzazi
-(blob/main/images/uzazilgo.jpg)
+![plot](./images/uzazilgo.jpg)
 
 # The Manual
 
