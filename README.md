@@ -116,9 +116,9 @@ The optimal programming language for developing an AI-powered personalized learn
 
 <div>
   <a href="https://www.instagram.com/mrwellslife"> INSTAGRAM </a><br>
-  <a href="https://x.com/mrwellslife">X (Formerly Twitter)</a>
-  <a href="https://web.facebook.com/MrWellslife">Facebook</a>
-  <a href="https://www.tiktok.com/@mrwellslife">TIKTOK</a>
+  <a href="https://x.com/mrwellslife">X (Formerly Twitter)</a><br>
+  <a href="https://web.facebook.com/MrWellslife">Facebook</a><br>
+  <a href="https://www.tiktok.com/@mrwellslife">TIKTOK</a><br>
   <a href="https://www.threads.net/@mrwellslife">THREADS</a>
 </div>
 
