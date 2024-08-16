@@ -1,5 +1,5 @@
 # Uzazi
-![alt text](https://github.com/IghodaloEllis/Uzazi/blob/main/images/uzazilgo.jpg)
+![![uzazilgo](https://github.com/user-attachments/assets/cc03af7b-de2d-4985-8552-265ee3538141)
 
 # The Manual
 
