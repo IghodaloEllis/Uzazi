@@ -1,7 +1,6 @@
 # Uzazi <sup>:tm:</sup>
 
-![UZAZI LOGO](https://raw.githubusercontent.com/IghodaloEllis/Uzazi/main/images/uzazilgo.jpg |width=100)
-
+<img src="https://raw.githubusercontent.com/IghodaloEllis/Uzazi/main/images/uzazilgo.jpg" width=50% height=50% alt"UZAZI LOGO">
 # THE INTRODUCTION
 We're currently working with AI on this project, but we're also welcoming contributions from others. 
 We may not end up using every library and framework listed, but we're keeping our options open for input from contributors.
