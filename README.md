@@ -1,5 +1,5 @@
 # Uzazi <sup>:tm:</sup>
-![uzazilgo](https://github.com/user-attachments/assets/85f947ac-2f12-4864-a820-39ba6597d712)
+![uzazilgo](https://github.com/user-attachments/assets/85f947ac-2f12-4864-a820-39ba6597d712 width=50% height=50% )
 
 <img src="https://github.com/user-attachments/assets/85f947ac-2f12-4864-a820-39ba6597d712.png" width=50% height=50% alt"UZAZI LOGO">
 
