@@ -1,6 +1,6 @@
 # Uzazi <sup>:tm:</sup>
 
-![uzazilgo]<img src="https://github.com/user-attachments/assets/85f947ac-2f12-4864-a820-39ba6597d712" width=50% height=50%>
+<img src="https://github.com/user-attachments/assets/85f947ac-2f12-4864-a820-39ba6597d712" alt="UZAZI LOGO" width=50% height=50%>
 
 # THE INTRODUCTION
 We're currently working with AI on this project, but we're also welcoming contributions from others. 
