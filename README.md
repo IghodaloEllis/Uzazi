@@ -68,7 +68,7 @@ The optimal programming language for developing an AI-powered personalized learn
 
 # Core Components and Technologies
     1.User Management:
-    • User authentication and authorization
+    • User authentication and authorization (Google & Facebook login)    
     • Profile management
     • Learning history tracking
     • Technology: PHP, Django/Flask, SQL databases (PostgreSQL, MySQL)
