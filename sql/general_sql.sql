@@ -4,18 +4,20 @@ In the database, every important document should be communicated though a very s
 
 
 CREATE TABLE users (
-    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
+ --   student_id INT UNIQUE,  -- Unique identifier for students
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     email VARCHAR(255) UNIQUE,
     password VARCHAR(255),
-    role ENUM('admin', 'teacher', 'student') DEFAULT 'student',
+    role ENUM('admin', 'instructor', 'student') DEFAULT 'student',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP   
 );
+
 CREATE TABLE user_images (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    user_id INT,
+--    user_id INT,
     image_path VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id)
