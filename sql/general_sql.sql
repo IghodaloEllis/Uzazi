@@ -11,6 +11,7 @@ CREATE TABLE users (
     email VARCHAR(255) UNIQUE,
     password VARCHAR(255),
     role ENUM('admin', 'instructor', 'student') DEFAULT 'student',
+    status ENUM('active', 'inactive', 'deleted') DEFAULT 'active',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP   
 );
@@ -25,6 +26,7 @@ CREATE TABLE user_images (
 
 CREATE TABLE Student_Profiles (
     student_id INT PRIMARY KEY,
+    user_id INT;
     address VARCHAR(255),
     nationality VARCHAR(100),
     religion VARCHAR(50),
@@ -35,13 +37,15 @@ CREATE TABLE Student_Profiles (
     gender ENUM('Male', 'Female', 'Other'),
     profile_picture VARCHAR(255),
     bio TEXT,
-    FOREIGN KEY (student_id) REFERENCES Students(student_id)
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (user_id) REFERENCES users(id);
 );
 
 CREATE TABLE Student_Achievements (
     achievement_id INT PRIMARY KEY AUTO_INCREMENT,
     student_id INT,
     achievement_name VARCHAR(255),
+    type VARCHAR(50) NULL,
     description TEXT,
     date_achieved DATE,
     proof_link VARCHAR(255),
@@ -52,18 +56,26 @@ CREATE TABLE Student_Payments (
     payment_id INT PRIMARY KEY AUTO_INCREMENT,
     student_id INT,
     amount DECIMAL(10,2),
+    transaction_id INT,
+    fee_type VARCHAR(50),
     payment_date DATE,
+    due_date DATE,
     payment_method ENUM('Cash', 'Card', 'Bank Transfer', 'Online Payment'),
     payment_status ENUM('Pending', 'Completed', 'Failed', 'Refunded'),
     reference_number VARCHAR(50),
     description TEXT,
     FOREIGN KEY (student_id) REFERENCES Students(student_id)
 );
+CREATE TABLE transactions (
+    transaction_id INT PRIMARY KEY AUTO_INCREMENT,
+    fee_type ENUM('Tuition', 'Exam', 'Materials') DEFAULT 'Tuition',
 
+    
 CREATE TABLE Courses (
     course_id INT PRIMARY KEY AUTO_INCREMENT,
     course_name VARCHAR(255) NOT NULL,
     description TEXT,
+    category VARCHAR (100),
     duration INT,
     level ENUM('Beginner', 'Intermediate', 'Advanced'),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -94,7 +106,7 @@ CREATE TABLE Course_Materials (
     material_type ENUM('document', 'video', 'audio', 'link'),
     title VARCHAR(255),
     description TEXT,
-    file_path VARCHAR(255),
+    file_id VARCHAR(50); -- to mprove security and scalability. instead of in the database
     FOREIGN KEY (course_id) REFERENCES Courses(course_id)
 );
 
@@ -113,6 +125,8 @@ CREATE TABLE Student_Courses (
     student_id INT,
     course_id INT,
     enrollment_date DATE,
+    category VARCHAR(50),
+    language VARCHAR(50),
     status ENUM('Enrolled', 'Completed', 'Dropped'),
     PRIMARY KEY (student_id, course_id),
     FOREIGN KEY (student_id) REFERENCES Students(student_id),
