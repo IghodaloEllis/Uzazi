@@ -52,7 +52,7 @@ echo $logo->getHtml();
     </main>
 
     <footer>
-        &copy; Your Learning Platform <?php echo date('Y'); ?>
+        &copy; Uzazi Learning Platform <?php echo date('Y'); ?>
     </footer>
 </body>
 </html>
