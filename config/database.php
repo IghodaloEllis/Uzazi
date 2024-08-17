@@ -1,18 +1,13 @@
 <?php
-class Database {
-    private $pdo;
+// Database configuration
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'your_database_name');
+define('DB_USER', 'your_username');
+define('DB_PASSWORD', 'your_password');
 
-    public function __construct() {
-       // require_once 'config/database.php';
+// Application configuration
+define('SITE_URL', 'http://website url');
+define('SITE_NAME', 'UZAZI');
+define('EMAIL_FROM', 'noreply@yourwebsite.com');
 
-        try {
-            $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME;
-            $this->pdo = new PDO($dsn, DB_USER, DB_PASSWORD);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            die("Connection failed: " . $e->getMessage());
-        }
-    }
-
-    // ... other methods for querying, inserting, updating, deleting
-}
+?>
