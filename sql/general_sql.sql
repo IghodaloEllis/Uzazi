@@ -1,11 +1,8 @@
 /*We won't be storing student IDs', Passports and Other personal informations & documents
 In the database, every important document should be communicated though a very secure approach.
 */
-
-
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
- --   student_id INT UNIQUE,  -- Unique identifier for students
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     email VARCHAR(255) UNIQUE,
@@ -13,20 +10,11 @@ CREATE TABLE users (
     role ENUM('admin', 'instructor', 'student') DEFAULT 'student',
     status ENUM('active', 'inactive', 'deleted') DEFAULT 'active',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP   
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-CREATE TABLE user_images (
-    id INT PRIMARY KEY AUTO_INCREMENT,
---    user_id INT,
-    image_path VARCHAR(255),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
-
-CREATE TABLE Student_Profiles (
-    student_id INT PRIMARY KEY,
-    user_id INT;
+CREATE TABLE user_details (
+    user_id INT PRIMARY KEY,
     address VARCHAR(255),
     nationality VARCHAR(100),
     religion VARCHAR(50),
@@ -35,21 +23,17 @@ CREATE TABLE Student_Profiles (
     emergency_contact_phone VARCHAR(20),
     date_of_birth DATE,
     gender ENUM('Male', 'Female', 'Other'),
-    profile_picture VARCHAR(255),
+    profile_picture VARCHAR(255), -- Reference to external image storage
     bio TEXT,
-    FOREIGN KEY (student_id) REFERENCES Students(student_id),
-    FOREIGN KEY (user_id) REFERENCES users(id);
+    FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-CREATE TABLE Student_Achievements (
-    achievement_id INT PRIMARY KEY AUTO_INCREMENT,
-    student_id INT,
-    achievement_name VARCHAR(255),
-    type VARCHAR(50) NULL,
-    description TEXT,
-    date_achieved DATE,
-    proof_link VARCHAR(255),
-    FOREIGN KEY (student_id) REFERENCES Students(student_id)
+CREATE TABLE user_images (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    image_path VARCHAR(255), -- Reference to external image storage
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE Student_Payments (
@@ -64,11 +48,20 @@ CREATE TABLE Student_Payments (
     payment_status ENUM('Pending', 'Completed', 'Failed', 'Refunded'),
     reference_number VARCHAR(50),
     description TEXT,
-    FOREIGN KEY (student_id) REFERENCES Students(student_id)
+    FOREIGN KEY (student_id) REFERENCES users(id)
 );
+
 CREATE TABLE transactions (
     transaction_id INT PRIMARY KEY AUTO_INCREMENT,
-    fee_type ENUM('Tuition', 'Exam', 'Materials') DEFAULT 'Tuition',
+    user_id INT,
+    amount DECIMAL(10,2),
+    transaction_date DATETIME,
+    status ENUM('pending', 'completed', 'failed', 'refunded'),
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)  
+);
 
     
 CREATE TABLE Courses (
@@ -148,9 +141,9 @@ CREATE TABLE Instructor (
 CREATE TABLE Course_Instructor (
     course_id INT,
     instructor_id INT,
-    PRIMARY KEY (course_id, teacher_id),
-    FOREIGN KEY (course_id) REFERENCES Courses(course_id),
-    FOREIGN KEY (teacher_id) REFERENCES Teachers(teacher_id)
+    PRIMARY KEY (course_id, instructor_id),
+    FOREIGN KEY (course_id) REFERENCES Courses(course_id),  
+    FOREIGN KEY (instructor_id) REFERENCES Instructor(instructor_id)
 );
 
 CREATE TABLE Admins (
@@ -173,3 +166,56 @@ CREATE TABLE Course_Schedules (
     instructor_id INT, -- Reference to a Teachers table if applicable
     FOREIGN KEY (course_id) REFERENCES Courses(course_id)
 );
+
+
+/** INDEXES**/
+-- Users table
+CREATE INDEX idx_users_email ON users (email);
+CREATE INDEX idx_users_role ON users (role);
+
+-- Student_Profiles table
+CREATE INDEX idx_student_profiles_user_id ON Student_Profiles (user_id);
+CREATE INDEX idx_student_profiles_phone_number ON Student_Profiles (phone_number);
+
+-- Student_Achievements table
+CREATE INDEX idx_student_achievements_student_id ON Student_Achievements (student_id);
+
+-- Student_Payments table
+CREATE INDEX idx_student_payments_student_id ON Student_Payments (student_id);
+CREATE INDEX idx_student_payments_payment_date ON Student_Payments (payment_date);
+CREATE INDEX idx_student_payments_payment_status ON Student_Payments (payment_status);
+
+-- Courses table
+CREATE INDEX idx_courses_course_name ON Courses (course_name);
+CREATE INDEX idx_courses_category ON Courses (category);
+CREATE INDEX idx_courses_level ON Courses (level);
+
+-- Course_Modules table
+CREATE INDEX idx_course_modules_course_id ON Course_Modules (course_id);
+
+-- Course_Lessons table
+CREATE INDEX idx_course_lessons_module_id ON Course_Lessons (module_id);
+
+-- Course_Materials table
+CREATE INDEX idx_course_materials_course_id ON Course_Materials (course_id);
+
+-- Course_Pricing table
+CREATE INDEX idx_course_pricing_course_id ON Course_Pricing (course_id);
+CREATE INDEX idx_course_pricing_start_date ON Course_Pricing (start_date);
+CREATE INDEX idx_course_pricing_end_date ON Course_Pricing (end_date);
+
+-- Student_Courses table
+CREATE INDEX idx_student_courses_student_id ON Student_Courses (student_id);
+CREATE INDEX idx_student_courses_course_id ON Student_Courses (course_id);
+
+-- Instructor table
+CREATE INDEX idx_instructor_email ON Instructor (email);
+
+-- Course_Instructor table
+CREATE INDEX idx_course_instructor_course_id ON Course_Instructor (course_id);
+CREATE INDEX idx_course_instructor_instructor_id ON Course_Instructor (instructor_id);
+
+-- Course_Schedules table
+CREATE INDEX idx_course_schedules_course_id ON Course_Schedules (course_id);
+CREATE INDEX idx_course_schedules_instructor_id ON Course_Schedules (instructor_id);
+CREATE INDEX idx_course_schedules_day_of_week_start_time ON Course_Schedules (day_of_week, start_time);
