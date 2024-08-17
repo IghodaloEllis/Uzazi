@@ -2,7 +2,7 @@
 session_start();
 
 // Database connection details (replace with your credentials)
-require_once 'db_connection.php';
+require_once 'classes/database.php';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
