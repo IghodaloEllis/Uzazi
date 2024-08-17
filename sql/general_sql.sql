@@ -1,15 +1,26 @@
-CREATE TABLE Students (
-    student_id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     email VARCHAR(255) UNIQUE,
     password VARCHAR(255),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    role ENUM('admin', 'teacher', 'student') DEFAULT 'student',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP   
+);
+CREATE TABLE user_images (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    image_path VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE Student_Profiles (
     student_id INT PRIMARY KEY,
     address VARCHAR(255),
+    nationality VARCHAR(100),
+    religion VARCHAR(50),
     phone_number VARCHAR(20),
     emergency_contact_name VARCHAR(100),
     emergency_contact_phone VARCHAR(20),
@@ -101,8 +112,8 @@ CREATE TABLE Student_Courses (
     FOREIGN KEY (course_id) REFERENCES Courses(course_id)
 );
 
-CREATE TABLE Teachers (
-    teacher_id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE Instructor (
+    instructor_id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     email VARCHAR(255) UNIQUE,
@@ -113,9 +124,9 @@ CREATE TABLE Teachers (
     experience INT
 );
 
-CREATE TABLE Course_Teachers (
+CREATE TABLE Course_Instructor (
     course_id INT,
-    teacher_id INT,
+    instructor_id INT,
     PRIMARY KEY (course_id, teacher_id),
     FOREIGN KEY (course_id) REFERENCES Courses(course_id),
     FOREIGN KEY (teacher_id) REFERENCES Teachers(teacher_id)
