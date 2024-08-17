@@ -1,3 +1,8 @@
+/*We won't be storing student IDs', Passports and Other personal informations & documents
+In the database, every important document should be communicated though a very secure approach.
+*/
+
+
 CREATE TABLE users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50),
