@@ -3,7 +3,7 @@ class Database {
     private $pdo;
 
     public function __construct() {
-        require_once 'config/database.php';
+       // require_once 'config/database.php';
 
         try {
             $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME;
