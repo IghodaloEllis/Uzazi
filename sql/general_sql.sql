@@ -1,5 +1,6 @@
 /*We won't be storing student IDs', Passports and Other personal informations & documents
 In the database, every important document should be communicated though a very secure approach.
+All queries run now but this is not the final database.
 */
 
 CREATE TABLE users (
