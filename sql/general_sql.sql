@@ -1,6 +1,7 @@
 /*We won't be storing student IDs', Passports and Other personal informations & documents
 In the database, every important document should be communicated though a very secure approach.
 */
+
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50),
@@ -25,6 +26,17 @@ CREATE TABLE user_details (
     gender ENUM('Male', 'Female', 'Other'),
     profile_picture VARCHAR(255), -- Reference to external image storage
     bio TEXT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE student_achievements (
+    achievement_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    achievement_name VARCHAR(255),
+    achievement_type VARCHAR(50),
+    description TEXT,
+    date_achieved DATE,
+    proof_link VARCHAR(255),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
@@ -166,57 +178,39 @@ CREATE TABLE course_schedules (
     FOREIGN KEY (course_id) REFERENCES courses(course_id)
 );
 
-
-
-/** INDEXES**/
--- Users table
+-- INDEXES
 CREATE INDEX idx_users_email ON users (email);
 CREATE INDEX idx_users_role ON users (role);
 
 CREATE INDEX idx_user_details_user_id ON user_details (user_id);
-CREATE INDEX idx_user_details_email ON user_details (email);
 CREATE INDEX idx_user_details_phone_number ON user_details (phone_number);
 
--- Student_Achievements table
-CREATE INDEX idx_student_achievements_student_id ON Student_Achievements (student_id);
+CREATE INDEX idx_student_achievements_user_id ON student_achievements (user_id);
 
--- Student_Payments table
-CREATE INDEX idx_student_payments_student_id ON Student_Payments (student_id);
-CREATE INDEX idx_student_payments_payment_date ON Student_Payments (payment_date);
-CREATE INDEX idx_student_payments_payment_status ON Student_Payments (payment_status);
+CREATE INDEX idx_student_payments_user_id ON student_payments (user_id);
+CREATE INDEX idx_student_payments_payment_date ON student_payments (payment_date);
+CREATE INDEX idx_student_payments_payment_status ON student_payments (payment_status);
 
--- Courses table
-CREATE INDEX idx_courses_course_name ON Courses (course_name);
-CREATE INDEX idx_courses_category ON Courses (category);
-CREATE INDEX idx_courses_level ON Courses (level);
+CREATE INDEX idx_courses_course_name ON courses (course_name);
+CREATE INDEX idx_courses_category ON courses (category);
+CREATE INDEX idx_courses_level ON courses (level);
 
--- Course_Modules table
-CREATE INDEX idx_course_modules_course_id ON Course_Modules (course_id);
+CREATE INDEX idx_course_modules_course_id ON course_modules (course_id);
 
--- Course_Lessons table
-CREATE INDEX idx_course_lessons_module_id ON Course_Lessons (module_id);
+CREATE INDEX idx_course_lessons_module_id ON course_lessons (module_id);
 
--- Course_Materials table
-CREATE INDEX idx_course_materials_course_id ON Course_Materials (course_id);
+CREATE INDEX idx_course_materials_course_id ON course_materials (course_id);
 
--- Course_Pricing table
-CREATE INDEX idx_course_pricing_course_id ON Course_Pricing (course_id);
-CREATE INDEX idx_course_pricing_start_date ON Course_Pricing (start_date);
-CREATE INDEX idx_course_pricing_end_date ON Course_Pricing (end_date);
+CREATE INDEX idx_course_pricing_course_id ON course_pricing (course_id);
+CREATE INDEX idx_course_pricing_start_date ON course_pricing (start_date);
+CREATE INDEX idx_course_pricing_end_date ON course_pricing (end_date);
 
--- Student_Courses table
-CREATE INDEX idx_student_courses_student_id ON Student_Courses (student_id);
-CREATE INDEX idx_student_courses_course_id ON Student_Courses (course_id);
+CREATE INDEX idx_student_courses_student_id ON student_courses (student_id);
+CREATE INDEX idx_student_courses_course_id ON student_courses (course_id);
 
--- Instructor table
-CREATE INDEX idx_instructor_email ON Instructor (email);
+CREATE INDEX idx_instructors_email ON instructors (email);
 
--- Course_Instructor table
-CREATE INDEX idx_course_instructor_course_id ON Course_Instructor (course_id);
-CREATE INDEX idx_course_instructor_instructor_id ON Course_Instructor (instructor_id);
+CREATE INDEX idx_course_instructor_course_id ON course_instructor (course_id);
+CREATE INDEX idx_course_instructor_instructor_id ON course_instructor (instructor_id);
 
--- Course_Schedules table
-CREATE INDEX idx_course_schedules_course_id ON Course_Schedules (course_id);
-CREATE INDEX idx_course_schedules_instructor_id ON Course_Schedules (instructor_id);
-CREATE INDEX idx_course_schedules_day_of_week_start_time ON Course_Schedules (day_of_week, start_time);
-)
+CREATE INDEX idx_course_schedules_course_id ON course_schedules (course_id);
