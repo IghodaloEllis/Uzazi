@@ -1,59 +1,33 @@
-<?php
-class Image {
-    private $path;
-    private $altText;
-    private $width;
-    private $height;
-
-    public function __construct($path, $altText, $width = null, $height = null) {
-        $this->path = $path;
-        $this->altText = $altText;
-        $this->width = $width;
-        $this->height = $height;
-    }
-
-    public function getHtml() {
-        $attributes = [];
-        if ($this->width) {
-            $attributes[] = 'width="' . $this->width . '"';
-        }
-        if ($this->height) {
-            $attributes[] = 'height="' . $this->height . '"';
-        }
-        $attributesString = implode(' ', $attributes);
-        return '<img src="' . $this->path . '" alt="' . $this->altText . '" ' . $attributesString . '>';
-    }
-}
-
-<!DOCTYPE html>
-<html>
+<html style="background-color: #c0d2bb;">
 <head>
-    <title>Welcome - Uzazi Learning Platform</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Uzazi - Welcome to Uzazi Learning Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+    <!-- <script src="login.js"></script>-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
-    <header>
-$logo = new Image('images/logo.png', 'Uzazi Learning Platform Logo', 100, 100);
-echo $logo->getHtml();       
-<h1>Welcome to Uzazi Learning Platform</h1>
-    </header>
-
-    <main>
-        <h2>Login</h2>
-        <form action="login.php" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
-        </form>
-
-        <p>New user? <a href="register.php">Register</a></p>
-    </main>
-
-    <footer>
-        &copy; Uzazi Learning Platform <?php echo date('Y'); ?>
+  <div class="login-container">
+    <div class="site-image"></div>
+<form id="loginForm" class="login-form" action="login.php"  method="post">
+        <div class="logo"> </div>
+        <label for="email" class="label">Email:</label>
+        <input type="email" id="email" name="email" class="input" required>
+        <label for="password" class="label">Password:</label>
+        <input type="password" id="password" name="password" class="input" required>
+        <button type="submit" class="login-button">Login</button>
+         <p>New user? <a href="register.php">Register</a></p>
+    </form>
+    
+</div>
+ <footer class="footer">
+ &copy; Uzazi Learning Platform 2024  
     </footer>
 </body>
 </html>
-?>
+
+
+

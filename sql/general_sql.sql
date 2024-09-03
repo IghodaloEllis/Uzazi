@@ -10,7 +10,6 @@ CREATE TABLE users (
     email VARCHAR(255) UNIQUE,
     password VARCHAR(255),
     role ENUM('admin', 'instructor', 'student') DEFAULT 'student',
-    status ENUM('active', 'inactive', 'deleted') DEFAULT 'active',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -27,6 +26,7 @@ CREATE TABLE user_details (
     gender ENUM('Male', 'Female', 'Other'),
     profile_picture VARCHAR(255), -- Reference to external image storage
     bio TEXT,
+    status ENUM('active', 'inactive', 'deleted', 'new') DEFAULT 'new',
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
