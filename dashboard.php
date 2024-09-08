@@ -3,6 +3,9 @@ require 'config/database.php';
 
 session_start();
 
+// Disable error reporting for warnings
+//error_reporting(E_ALL ^ E_WARNING);
+
 // Create an instance of the Database class
 $db = new Database();
 
@@ -12,14 +15,18 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+
 // Get user details
 $user_id = $_SESSION['user_id'];
 // Select all columns from both tables using aliases
 $stmt = $db->prepare("SELECT u.*, ud.* FROM users u INNER JOIN user_details ud ON u.id = ud.user_id WHERE u.id = ?");
+
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $user = $result->fetch_assoc();
+
+
 
 // Retrieve the user's profile picture from the user_images table
 $stmt = $db->prepare("SELECT image_path FROM user_images WHERE user_id = ? ORDER BY created_at DESC LIMIT 1");
@@ -36,18 +43,26 @@ $profilePicture = $row['image_path'];
 <html lang="en">
 <head>
     <title>Dashboard - Uzazi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+     <header class="d-flex justify-content-between align-items-center py-3 bg-light">
+        <div class="text-light fw-bold fs-4">Uzazi - School Dashboard</div>
+        <div class="user-actions d-flex align-items-center">
+            <span class="me-3">Hello, <?php echo $user['first_name']; ?></span>
+            <a href="update_profile.php" class="btn btn-info me-2">Update Profile</a>
+            <a href="logout.php" class="btn btn-danger">Logout</a>
+        </div>
+    </header>
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-12">
                 <div class="card">
-                    <img src="<?php echo $profilePicture; ?>" alt="Profile Picture" class="card-img-top img-fluid mx-auto" width="auto" height="150">
+                    <img src="<?php echo $profilePicture; ?>" alt="Profile Picture" class="card-img-top img-fluid mx-auto" width="auto" height="120">
                     <div class="card-body">
                         <h2><?php echo $user['first_name'] . ' ' . $user['last_name']; ?></h2>
                         <p>Email: <?php echo $user['email']; ?></p>
-                        <p>Role: <?php echo $user['role']; ?></p>
                         <p>Status: <?php echo $user['status']; ?></p>
                         <p>Address: <?php echo $user['address']; ?></p>
                         <p>Nationality: <?php echo $user['nationality']; ?></p>
@@ -69,16 +84,12 @@ $profilePicture = $row['image_path'];
                             <button type="submit" class="btn btn-primary">Upload Profile Picture</button>
                         </form>
                     </div>
-                    <div class="col-sm-12">
-                        <div class="user-actions d-flex justify-content-between">
-                            <a href="edit_profile.php" class="btn btn-secondary me-2">Edit Profile</a>
-                            <a href="update_profile.php" class="btn btn-info">Update Profile</a>
-                            <a href="logout.php" class="btn btn-danger">Logout</a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+     <footer class="footer">
+ &copy; Uzazi Learning Platform 2024  
+    </footer>
 </body>
 </html>
