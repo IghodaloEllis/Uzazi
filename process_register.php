@@ -3,6 +3,7 @@
 /***
 include 'config/database.php';
 
+// To be implemented With live testing phase
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get user input
@@ -62,16 +63,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Hash password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    
 
     // Insert user data
+    // $stmt = $db->prepare("INSERT INTO users (first_name, last_name, email, password, role) VALUES (?, ?, ?, ?, ?)");
+    // $stmt->bind_param("sssss", $first_name, $last_name, $email, $hashed_password, $role);
+    //if ($stmt->execute()) 
+
+    // Insert user data into the users table
     $stmt = $db->prepare("INSERT INTO users (first_name, last_name, email, password, role) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("sssss", $first_name, $last_name, $email, $hashed_password, $role);
+    $stmt->execute();
+    //if ($stmt->execute()) 
 
-    if ($stmt->execute()) {
+    // Get the ID of the newly inserted user
+    $userId = $stmt->insert_id;
+
+    // Insert a new record into user_details
+    $stmt = $db->prepare("INSERT INTO user_details (user_id, address, nationality, religion, phone_number, emergency_contact_name, emergency_contact_phone, date_of_birth, gender) VALUES (?, '', '', '', '', '', '', '1970-01-01', 'Other')");
+    $stmt->bind_param("i", $userId);
+    //$stmt->execute();
+    if ($stmt->execute()) 
+
+    {
         // Registration successful
-        header('Location: login.php?success=registered');
+        header('Location: index.php?success=registered');
         exit;
-    } else {
+    } 
+    else 
+    {
         // Registration failed
         header('Location: register.php?error=registration_failed');
         exit;
