@@ -60,13 +60,13 @@ $profilePicture = $row['image_path'];
             <nav class="col-md-3 col-sm-4 mb-3 d-none d-md-block">
                 <ul class="nav flex-column nav-pills bg-light rounded-3 shadow-sm">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active" aria-current="page">Learning</a>
+                        <a href="#" class="nav-link active" aria-current="page">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" aria-current="page">Learning</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Tasks</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Attendance</a>
                     </li>
                     <li class="nav-item">
                         <a href="profile.php" class="nav-link">Profile</a>
@@ -75,14 +75,15 @@ $profilePicture = $row['image_path'];
                         <a href="#" class="nav-link">Achievements</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Payments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Courses</a>
+                        <a href="payments.php" class="nav-link">Payments</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Transactions</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Courses</a>
+                    </li>
+                    
                 </ul>
             </nav>
 <div class="col-md-9 col-sm-8">
@@ -120,7 +121,7 @@ $profilePicture = $row['image_path'];
         </div>
     </div>
     </div>
-</main>
+ </main>
 </div>
      <footer class="footer">
  &copy; Uzazi Learning Platform 2024  

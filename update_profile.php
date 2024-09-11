@@ -9,7 +9,7 @@ $db = new Database();
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: index.php');
     exit;
 }
 
@@ -30,8 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validate form data (e.g., check for empty fields, valid email, date format)
 
     // Update user details
-    $stmt = $db->prepare("UPDATE user_details SET address = ?, nationality = ?, religion = ?, phone_number = ?, emergency_contact_name = ?, emergency_contact_phone = ?, date_of_birth = ?, gender = ? WHERE user_id = ?");
-    $stmt->bind_param("sssssssssi", $address, $nationality, $religion, $phone_number, $emergency_contact_name, $emergency_contact_phone, $date_of_birth, $gender, $user_id);
+    try
+     {
+
+    $stmt = $db->prepare("UPDATE user_details SET address = ?, nationality = ?, religion = ?, phone_number = ?, emergency_contact_name = ?, emergency_contact_phone = ?, date_of_birth = ?, gender = ?, bio = ? WHERE user_id = ?");
+    $stmt->bind_param("sssssssssi", $address, $nationality, $religion, $phone_number, $emergency_contact_name, $emergency_contact_phone, $date_of_birth, $gender, $bio, $user_id);
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
@@ -43,6 +46,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: dashboard.php?error=profile_update_failed');
         exit;
     }
+} 
+catch (PDOException $e) {
+    if ($e->getCode() == 23000) { // Duplicate entry error
+        echo "Error: User details already exist.";
+    } else {
+        echo "Database error: " . $e->getMessage();
+    }
+} catch (Exception $e) {
+    echo "General error: " . $e->getMessage();
 }
 
 // Retrieve user details from both tables in a single query

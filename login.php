@@ -1,60 +1,80 @@
 <?php
-session_start();
+require 'config/database.php';
 
-// Database connection details (replace with your credentials)
-require_once 'classes/database.php';
+// Create an instance of the Database class
+$db = new Database();
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $db->escape($_POST['email']);
+    $password = $db->escape($_POST['password']);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    // Prepare and execute the SQL statement to check user credentials
-    $sql = "SELECT * FROM users WHERE username = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows == 1) {
-        $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
-            // Successful login
-            $_SESSION['user_id'] = $row['id']; // Store user ID in session
-            $_SESSION['username'] = $username;
-            header("Location: welcome.php"); // Redirect to welcome page
-            exit;
-        } else {
-            // Incorrect password
-            $error_message = "Invalid username or password.";
-        }
-    } else {
-        // User not found
-        $error_message = "Invalid username or password.";
+    // Validate input
+    if (empty($email) || empty($password)) {
+        // Handle empty input
+        header('Location: login.php?error=empty');
+        exit;
     }
 
-    $stmt->close();
+    // Check if email exists
+    $stmt = $db->prepare("SELECT id, password FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+
+    if ($row && password_verify($password, $row['password'])) {
+        // Successful login, start a session
+        session_start();
+        $_SESSION['user_id'] = $row['id'];
+        header('Location: dashboard.php');
+        exit;
+    } else {
+        // Login failed
+        header('Location: login.php?error=invalid');
+        exit;
+    }
 }
 
-$conn->close();
-?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <?php if (isset($error_message)) { ?>
-        <p style="color: red;"><?php echo $error_message; ?></p>
-    <?php } ?>
 
-    </body>
-</html>
+
+
+/**
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Validate input
+    if (empty($email) || empty($password)) {
+        // Handle empty input
+        header('Location: login.php?error=empty');
+        exit;
+    }
+
+    // Sanitize input using the database connection
+    $email = mysqli_real_escape_string($db->conn, $email);
+    $password = mysqli_real_escape_string($db->conn, $password);
+
+    // Check if email exists
+    $stmt = $db->prepare("SELECT id, password FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+
+    if ($row && password_verify($password, $row['password'])) {
+        // Successful login, start a session
+        session_start();
+        $_SESSION['user_id'] = $row['id'];
+        header('Location: dashboard.php');
+        exit;
+    } else {
+        // Login failed
+        header('Location: login.php?error=invalid');
+        exit;
+    }
+}
+
+**/

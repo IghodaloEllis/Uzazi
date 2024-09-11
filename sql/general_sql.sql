@@ -179,6 +179,22 @@ CREATE TABLE course_schedules (
     FOREIGN KEY (course_id) REFERENCES courses(course_id)
 );
 
+-- POPULATE TABLES THAT NEED TO BE lIKE COURSES ETC
+INSERT INTO courses (course_name, description, category, duration, level) VALUES
+    ('Biology', 'Introduction to the study of living organisms', 'Nature and Science', 12, 'Beginner'),
+    ('Chemistry', 'Study of matter and its properties', 'Nature and Science', 12, 'Intermediate'),
+    ('Physics', 'Study of matter, energy, force, and motion', 'Nature and Science', 12, 'Advanced'),
+    ('Earth Science', 'Study of the Earth and its systems', 'Nature and Science', 12, 'Beginner'),
+    -- ... (We'll add more courses from each category)
+    ('Islam', 'Study of Islamic beliefs and practices', 'Spirituality and Religion', 10, 'Beginner'),
+    ('Buddhism', 'Introduction to Buddhist philosophy and teachings', 'Spirituality and Religion', 8, 'Intermediate'),
+    ('Mathematics (Grade 7)', 'Core math concepts for 7th grade', 'K12 Education', 10, 'Intermediate'),
+    ('Science (Grade 7)', 'General science concepts for 7th grade', 'K12 Education', 10, 'Intermediate'),
+    -- ... (We'll add more K12 courses)
+    ('Data Science', 'Introduction to data analysis and machine learning', 'Technology', 15, 'Advanced'),
+    ('Artificial Intelligence', 'Study of intelligent agents and their applications', 'Technology', 20, 'Advanced');
+
+
 -- INDEXES
 CREATE INDEX idx_users_email ON users (email);
 CREATE INDEX idx_users_role ON users (role);
