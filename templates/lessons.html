@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzazi - Course Lessons</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Course: {{ course.name }}</h1>
+
+    <ul>
+        {% for lesson in lessons %}
+            <li>
+                <a href="{% url_for('view_lesson', lesson_id=lesson.id) %}">{{ lesson.name }}</a>
+                <p>{{ lesson.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
