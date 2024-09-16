@@ -1,7 +1,8 @@
 # Uzazi <sup>:tm:</sup>
 
 <img src="https://github.com/user-attachments/assets/85f947ac-2f12-4864-a820-39ba6597d712" alt="UZAZI LOGO" width=30% height=30%>
-# Uzazi<sup>:tm:</sup> AI-Powered Personalized Learning Platform.
+
+ Uzazi<sup>:tm:</sup> AI-Powered Personalized Learning Platform.
 
 # THE INTRODUCTION
 We're currently working with AI on this project, but we're also welcoming contributions from others. 
