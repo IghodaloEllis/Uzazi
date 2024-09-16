@@ -1,0 +1,6 @@
+{
+    "require": {
+        "php": ">=7.4",
+        "paypal/rest-sdk": "^1.4"
+    }
+}
