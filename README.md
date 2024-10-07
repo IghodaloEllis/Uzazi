@@ -20,7 +20,7 @@ Don't worry if no **JUJU** we'll NOT sleep on this one cause we Love💟 it. Wor
 ### SOLUTION
     Develop an AI-powered personalized learning platform that adapts to each student's unique needs, providing tailored content, assessments, and feedback.
 
-### Estimated Time To Complete (ETC): 26 months
+### Estimated Time To Complete (ETC): 25 months
 
 ### Key Features:
 

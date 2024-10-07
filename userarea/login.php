@@ -23,8 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $row = $result->fetch_assoc();
 
     if ($row && password_verify($password, $row['password'])) {
+        
         // Successful login, start a session
-        session_start();
+
+        session_start(); // session start should be added to every page that needs user to be signed on.
+
         $_SESSION['user_id'] = $row['id'];
         header('Location: dashboard.php');
         exit;

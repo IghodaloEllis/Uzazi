@@ -61,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    //Hashing password is a secure way of storing password. Most passwords can still be seen using many reverse methods but hashing makes it impossible even for the developer. Don't trust any website that doesn't use this method.
     // Hash password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     
@@ -79,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the ID of the newly inserted user
     $userId = $stmt->insert_id;
 
-    // Insert a new record into user_details
+    // Insert a new record into user_details, We just need to populate the users_details table with default values
     $stmt = $db->prepare("INSERT INTO user_details (user_id, address, nationality, religion, phone_number, emergency_contact_name, emergency_contact_phone, date_of_birth, gender) VALUES (?, '', '', '', '', '', '', '1970-01-01', 'Other')");
     $stmt->bind_param("i", $userId);
     //$stmt->execute();
