@@ -72,7 +72,7 @@ $profilePicture = $row['image_path'];
                         <a href="profile.php" class="nav-link">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Achievements</a>
+                        <a href="achievements.php" class="nav-link">Achievements</a>
                     </li>
                     <li class="nav-item">
                         <a href="payments.php" class="nav-link">Payments</a>
